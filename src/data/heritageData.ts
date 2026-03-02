@@ -1,9 +1,16 @@
-import tajMahal from '@/assets/hero-taj-mahal.jpg';
+import ramMandir from '@/assets/ram-mandir.jpg';
 import hampi from '@/assets/hampi.jpg';
 import konark from '@/assets/konark.jpg';
 import ajanta from '@/assets/ajanta.jpg';
-import souvenirsImg from '@/assets/souvenirs.jpg';
-import festival from '@/assets/festival.jpg';
+import diwaliImg from '@/assets/diwali-varanasi.jpg';
+import pushkarImg from '@/assets/pushkar-fair.jpg';
+import konarkDanceImg from '@/assets/konark-dance.jpg';
+import brassDiyaImg from '@/assets/brass-diya.jpg';
+import pashminaImg from '@/assets/pashmina-shawl.jpg';
+import woodenElephantImg from '@/assets/wooden-elephant.jpg';
+import bluePotteryImg from '@/assets/blue-pottery.jpg';
+import madhubaniImg from '@/assets/madhubani-art.jpg';
+import bidriBoxImg from '@/assets/bidri-box.jpg';
 
 export interface HeritageSite {
   id: string;
@@ -71,18 +78,18 @@ export interface BlogPost {
 
 export const heritageSites: HeritageSite[] = [
   {
-    id: 'taj-mahal',
-    name: 'Taj Mahal',
-    location: 'Agra, Uttar Pradesh',
-    description: 'An ivory-white marble mausoleum on the right bank of the river Yamuna. A UNESCO World Heritage Site and one of the New Seven Wonders of the World.',
-    image: tajMahal,
+    id: 'ram-mandir',
+    name: 'Ram Mandir',
+    location: 'Ayodhya, Uttar Pradesh',
+    description: 'The grand Ram Mandir in Ayodhya, a magnificent temple dedicated to Lord Ram built in Nagara style architecture, symbolizing India\'s spiritual heritage.',
+    image: ramMandir,
     videoUrl: 'https://www.youtube.com/watch?v=8HV1JVgqPM0',
-    lat: 27.1751,
-    lng: 78.0421,
+    lat: 26.7922,
+    lng: 82.1998,
     bestTime: 'October to March',
     crowdLevel: 'High',
     weather: 'Pleasant, 15-25°C',
-    category: 'Mughal Architecture'
+    category: 'Temple Architecture'
   },
   {
     id: 'hampi',
@@ -134,8 +141,8 @@ export const tourPlans: TourPlan[] = [
     name: 'Golden Triangle',
     description: 'Experience the best of North India covering Delhi, Agra, and Jaipur. Visit iconic monuments, bustling bazaars, and royal palaces.',
     duration: '6 Days / 5 Nights',
-    sites: ['Taj Mahal', 'Amber Fort', 'Qutub Minar', 'Hawa Mahal'],
-    image: tajMahal,
+    sites: ['Ram Mandir', 'Amber Fort', 'Qutub Minar', 'Hawa Mahal'],
+    image: ramMandir,
     price: 45000,
     bestSeason: 'October - March'
   },
@@ -163,32 +170,32 @@ export const tourPlans: TourPlan[] = [
 
 export const events: Event[] = [
   {
-    id: 'diwali-2024',
+    id: 'diwali-2026',
     name: 'Diwali Festival Celebration',
-    date: '2024-11-01',
+    date: '2026-10-20',
     location: 'Varanasi, Uttar Pradesh',
-    description: 'Experience the magical Festival of Lights on the ghats of Varanasi with spectacular lamp ceremonies.',
-    image: festival,
+    description: 'Experience the magical Festival of Lights on the ghats of Varanasi with spectacular lamp ceremonies and fireworks.',
+    image: diwaliImg,
     category: 'Festival',
     ticketPrice: 2500
   },
   {
-    id: 'pushkar-fair',
+    id: 'pushkar-fair-2026',
     name: 'Pushkar Camel Fair',
-    date: '2024-11-15',
+    date: '2026-11-03',
     location: 'Pushkar, Rajasthan',
     description: 'One of the world\'s largest camel fairs featuring cultural performances, competitions, and traditional crafts.',
-    image: festival,
+    image: pushkarImg,
     category: 'Fair',
     ticketPrice: 1500
   },
   {
-    id: 'konark-dance',
+    id: 'konark-dance-2026',
     name: 'Konark Dance Festival',
-    date: '2024-12-01',
+    date: '2026-12-01',
     location: 'Konark, Odisha',
-    description: 'Classical dance festival held against the backdrop of the magnificent Sun Temple.',
-    image: konark,
+    description: 'Classical dance festival held against the backdrop of the magnificent Sun Temple, featuring Odissi and other dance forms.',
+    image: konarkDanceImg,
     category: 'Dance Festival',
     ticketPrice: 3000
   }
@@ -199,7 +206,7 @@ export const souvenirs: Souvenir[] = [
     id: 'brass-lamp',
     name: 'Traditional Brass Diya',
     price: 1299,
-    image: souvenirsImg,
+    image: brassDiyaImg,
     description: 'Handcrafted brass oil lamp with intricate peacock design',
     category: 'Decor',
     artisan: 'Moradabad Craftsmen',
@@ -209,7 +216,7 @@ export const souvenirs: Souvenir[] = [
     id: 'pashmina-shawl',
     name: 'Kashmiri Pashmina Shawl',
     price: 8999,
-    image: souvenirsImg,
+    image: pashminaImg,
     description: 'Authentic handwoven pashmina with traditional embroidery',
     category: 'Textiles',
     artisan: 'Kashmir Weavers',
@@ -219,7 +226,7 @@ export const souvenirs: Souvenir[] = [
     id: 'wooden-elephant',
     name: 'Sandalwood Carved Elephant',
     price: 2499,
-    image: souvenirsImg,
+    image: woodenElephantImg,
     description: 'Intricately carved sandalwood elephant figurine',
     category: 'Sculpture',
     artisan: 'Mysore Artisans',
@@ -229,7 +236,7 @@ export const souvenirs: Souvenir[] = [
     id: 'blue-pottery',
     name: 'Jaipur Blue Pottery Vase',
     price: 1899,
-    image: souvenirsImg,
+    image: bluePotteryImg,
     description: 'Traditional blue pottery vase with Persian-inspired patterns',
     category: 'Pottery',
     artisan: 'Jaipur Potters',
@@ -239,7 +246,7 @@ export const souvenirs: Souvenir[] = [
     id: 'madhubani-art',
     name: 'Madhubani Painting',
     price: 3499,
-    image: souvenirsImg,
+    image: madhubaniImg,
     description: 'Authentic hand-painted Madhubani artwork on handmade paper',
     category: 'Art',
     artisan: 'Bihar Artists',
@@ -249,7 +256,7 @@ export const souvenirs: Souvenir[] = [
     id: 'bidri-box',
     name: 'Bidriware Jewelry Box',
     price: 4299,
-    image: souvenirsImg,
+    image: bidriBoxImg,
     description: 'Black metal box with silver inlay work',
     category: 'Decor',
     artisan: 'Bidar Craftsmen',
@@ -264,12 +271,12 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Exploring the intricate craftsmanship and symmetry that defines India\'s Mughal heritage.',
     content: 'The Mughal era left an indelible mark on India\'s architectural landscape...',
     author: { name: 'Priya Sharma', avatar: 'https://i.pravatar.cc/150?img=1' },
-    coverImage: tajMahal,
+    coverImage: ramMandir,
     category: 'Architecture',
-    date: '2024-01-15',
+    date: '2026-01-15',
     likes: 234,
     comments: [
-      { id: '1', author: 'Rahul', text: 'Beautiful article!', date: '2024-01-16' }
+      { id: '1', author: 'Rahul', text: 'Beautiful article!', date: '2026-01-16' }
     ]
   },
   {
@@ -278,9 +285,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'From Bharatanatyam to Kathak, discover the stories told through movement.',
     content: 'India\'s classical dance forms are not merely performances...',
     author: { name: 'Ananya Patel', avatar: 'https://i.pravatar.cc/150?img=2' },
-    coverImage: festival,
+    coverImage: konarkDanceImg,
     category: 'Dance',
-    date: '2024-01-20',
+    date: '2026-01-20',
     likes: 189,
     comments: []
   },
@@ -292,7 +299,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Venkat Rao', avatar: 'https://i.pravatar.cc/150?img=3' },
     coverImage: hampi,
     category: 'Spirituality',
-    date: '2024-01-25',
+    date: '2026-01-25',
     likes: 156,
     comments: []
   }

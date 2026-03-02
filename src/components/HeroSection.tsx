@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-taj-mahal.jpg';
+import heroImage from '@/assets/ram-mandir.jpg';
 
 interface HeroSectionProps {
   onExplore: () => void;
@@ -13,9 +13,9 @@ const HeroSection = ({ onExplore, onGetStarted }: HeroSectionProps) => {
     <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Taj Mahal at sunrise" 
+          <img 
+           src={heroImage} 
+           alt="Ram Mandir Ayodhya" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-background" />
