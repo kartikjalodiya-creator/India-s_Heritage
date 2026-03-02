@@ -49,12 +49,16 @@ const Events = () => {
 
   // Mock weather/crowd data for events
   const getEventConditions = (eventId: string) => {
-    const conditions = {
+    const conditions: Record<string, { weather: string; crowd: string; recommended: string }> = {
+      'holi-2026': { weather: 'Warm, 28°C', crowd: 'Very High', recommended: 'Morning best for Lathmar Holi' },
+      'pongal-2026': { weather: 'Pleasant, 26°C', crowd: 'High', recommended: 'Sunrise for traditional rituals' },
+      'navratri-2026': { weather: 'Pleasant, 28°C', crowd: 'Very High', recommended: 'Evening 8 PM onwards for Garba' },
+      'durga-puja-2026': { weather: 'Pleasant, 27°C', crowd: 'Very High', recommended: 'Evening for pandal hopping' },
       'diwali-2026': { weather: 'Clear, 22°C', crowd: 'Very High', recommended: 'Arrive by 4 PM for Ganga Aarti' },
       'pushkar-fair-2026': { weather: 'Warm, 28°C', crowd: 'High', recommended: 'Early morning best for camel trading' },
       'konark-dance-2026': { weather: 'Pleasant, 24°C', crowd: 'Moderate', recommended: 'Evening shows 6-9 PM recommended' }
     };
-    return conditions[eventId as keyof typeof conditions] || { weather: 'Pleasant', crowd: 'Moderate', recommended: 'Anytime' };
+    return conditions[eventId] || { weather: 'Pleasant', crowd: 'Moderate', recommended: 'Anytime' };
   };
 
   return (
