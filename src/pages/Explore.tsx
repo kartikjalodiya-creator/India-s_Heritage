@@ -15,13 +15,17 @@ const Explore = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
   const { savedTours, toggleSavedTour } = useApp();
 
-  const categories = ['All', 'Mughal Architecture', 'Ancient Ruins', 'Temple Architecture', 'Buddhist Heritage'];
+  const typeFilters = ['All Types', 'Cultural', 'Natural', 'Mixed'];
+  const [selectedType, setSelectedType] = useState<string>('All Types');
+
+  const categories = ['All', 'Temple Architecture', 'Mughal Architecture', 'Ancient Ruins', 'Buddhist Heritage', 'Forts & Palaces', 'Colonial Heritage', 'Archaeological Sites', 'Urban Heritage', 'National Park', 'Biodiversity Hotspot'];
 
   const filteredSites = heritageSites.filter(site => {
     const matchesCategory = selectedCategory === 'All' || site.category === selectedCategory;
+    const matchesType = selectedType === 'All Types' || site.type === selectedType;
     const matchesSearch = site.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          site.location.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesType && matchesSearch;
   });
 
   const handlePlay = (site: HeritageSite) => {
@@ -66,8 +70,20 @@ const Explore = () => {
               />
             </div>
 
-            {/* Category Filters */}
+            {/* Type Filters */}
             <div className="flex flex-wrap gap-2 justify-center">
+              {typeFilters.map(type => (
+                <Button
+                  key={type}
+                  variant={selectedType === type ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedType(type)}
+                  className={selectedType === type ? 'btn-heritage' : ''}
+                >
+                  {type}
+                </Button>
+              ))}
+              <span className="text-muted-foreground mx-1">|</span>
               {categories.map(category => (
                 <Button
                   key={category}

@@ -74,7 +74,7 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {heritageSites.map((site, index) => (
+            {heritageSites.slice(0, 8).map((site, index) => (
               <motion.div
                 key={site.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,7 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tourPlans.map((plan, index) => (
+            {tourPlans.slice(0, 3).map((plan, index) => (
               <motion.div
                 key={plan.id}
                 initial={{ opacity: 0, y: 30 }}
