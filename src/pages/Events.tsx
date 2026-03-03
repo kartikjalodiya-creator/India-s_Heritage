@@ -50,13 +50,26 @@ const Events = () => {
   // Mock weather/crowd data for events
   const getEventConditions = (eventId: string) => {
     const conditions: Record<string, { weather: string; crowd: string; recommended: string }> = {
-      'holi-2026': { weather: 'Warm, 28°C', crowd: 'Very High', recommended: 'Morning best for Lathmar Holi' },
       'pongal-2026': { weather: 'Pleasant, 26°C', crowd: 'High', recommended: 'Sunrise for traditional rituals' },
+      'republic-day-2026': { weather: 'Cool, 14°C', crowd: 'Very High', recommended: 'Arrive by 7 AM for best views' },
+      'vasant-panchami-2026': { weather: 'Cool, 18°C', crowd: 'Moderate', recommended: 'Morning for temple visits' },
+      'holi-2026': { weather: 'Warm, 28°C', crowd: 'Very High', recommended: 'Morning best for Lathmar Holi' },
+      'baisakhi-2026': { weather: 'Warm, 32°C', crowd: 'High', recommended: 'Early morning for Golden Temple' },
+      'rath-yatra-2026': { weather: 'Hot & humid, 34°C', crowd: 'Very High', recommended: 'Morning for chariot pulling' },
+      'hemis-festival-2026': { weather: 'Cool, 18°C', crowd: 'Moderate', recommended: 'Morning for Cham dances' },
+      'independence-day-2026': { weather: 'Humid, 33°C', crowd: 'Very High', recommended: 'Early morning for flag hoisting' },
+      'onam-2026': { weather: 'Tropical, 28°C', crowd: 'High', recommended: 'Morning for boat races' },
+      'ganesh-chaturthi-2026': { weather: 'Humid, 30°C', crowd: 'Very High', recommended: 'Evening for Visarjan processions' },
       'navratri-2026': { weather: 'Pleasant, 28°C', crowd: 'Very High', recommended: 'Evening 8 PM onwards for Garba' },
       'durga-puja-2026': { weather: 'Pleasant, 27°C', crowd: 'Very High', recommended: 'Evening for pandal hopping' },
+      'dussehra-2026': { weather: 'Pleasant, 26°C', crowd: 'Very High', recommended: 'Evening for Jamboo Savari' },
       'diwali-2026': { weather: 'Clear, 22°C', crowd: 'Very High', recommended: 'Arrive by 4 PM for Ganga Aarti' },
-      'pushkar-fair-2026': { weather: 'Warm, 28°C', crowd: 'High', recommended: 'Early morning best for camel trading' },
-      'konark-dance-2026': { weather: 'Pleasant, 24°C', crowd: 'Moderate', recommended: 'Evening shows 6-9 PM recommended' }
+      'pushkar-fair-2026': { weather: 'Warm, 28°C', crowd: 'High', recommended: 'Early morning for camel trading' },
+      'rann-utsav-2026': { weather: 'Cool, 20°C', crowd: 'High', recommended: 'Full moon night for white desert' },
+      'hornbill-2026': { weather: 'Cool, 15°C', crowd: 'Moderate', recommended: 'All day — different tribes perform' },
+      'konark-dance-2026': { weather: 'Pleasant, 24°C', crowd: 'Moderate', recommended: 'Evening shows 6-9 PM recommended' },
+      'jaipur-lit-fest-2026': { weather: 'Cool, 18°C', crowd: 'High', recommended: 'Morning sessions less crowded' },
+      'wildlife-week-2026': { weather: 'Pleasant, 25°C', crowd: 'Moderate', recommended: 'Dawn safari for best sightings' }
     };
     return conditions[eventId] || { weather: 'Pleasant', crowd: 'Moderate', recommended: 'Anytime' };
   };
