@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ShoppingCart, Search, Filter, MapPin, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { souvenirs } from '@/data/heritageData';
 import { useApp } from '@/contexts/AppContext';
 import { toast } from '@/hooks/use-toast';
@@ -12,17 +13,24 @@ import { toast } from '@/hooks/use-toast';
 const Shop = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedRegion, setSelectedRegion] = useState('All');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { addToCart, cart } = useApp();
 
-  const categories = ['All', 'Decor', 'Textiles', 'Sculpture', 'Pottery', 'Art'];
+  const categories = ['All', 'Decor', 'Textiles', 'Sculpture', 'Pottery', 'Art', 'Accessories', 'Specialty'];
+
+  const regions = useMemo(() => {
+    const uniqueOrigins = [...new Set(souvenirs.map(s => s.origin))].sort();
+    return ['All', ...uniqueOrigins];
+  }, []);
 
   const filteredProducts = souvenirs.filter(item => {
     const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
+    const matchesRegion = selectedRegion === 'All' || item.origin === selectedRegion;
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          item.origin.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          item.artisan.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesRegion && matchesSearch;
   });
 
   const handleAddToCart = (item: typeof souvenirs[0]) => {
@@ -77,7 +85,22 @@ const Shop = () => {
               />
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap">
+              {/* Region Filter */}
+              <Select value={selectedRegion} onValueChange={setSelectedRegion}>
+                <SelectTrigger className="w-52">
+                  <MapPin className="h-4 w-4 mr-2 text-muted-foreground" />
+                  <SelectValue placeholder="All Regions" />
+                </SelectTrigger>
+                <SelectContent className="max-h-64">
+                  {regions.map(region => (
+                    <SelectItem key={region} value={region}>
+                      {region}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
               {/* Category Filters */}
               <div className="flex flex-wrap gap-2">
                 {categories.map(category => (
