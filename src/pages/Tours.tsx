@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { tourPlans, heritageSites } from '@/data/heritageData';
 import { useApp } from '@/contexts/AppContext';
+import ContactExpertSection from '@/components/ContactExpertSection';
 import { useNavigate } from 'react-router-dom';
 import { toast } from '@/hooks/use-toast';
 
@@ -202,28 +203,7 @@ const Tours = () => {
         </div>
       </section>
 
-      {/* Personalized Planner CTA */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="font-display text-3xl font-bold mb-4">
-              Need a Custom Itinerary?
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Our travel experts can create a personalized tour plan based on your preferences, 
-              budget, and the best weather conditions for your chosen destinations.
-            </p>
-            <Button className="btn-heritage px-8">
-              Contact Travel Expert
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <ContactExpertSection />
 
       <Footer />
     </div>
