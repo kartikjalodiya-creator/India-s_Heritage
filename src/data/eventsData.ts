@@ -5,13 +5,18 @@ import holiImg from '@/assets/holi-festival.jpg';
 import navratriImg from '@/assets/navratri.jpg';
 import pongalImg from '@/assets/pongal.jpg';
 import durgaPujaImg from '@/assets/durga-puja.jpg';
-import festivalImg from '@/assets/festival.jpg';
-import hampiImg from '@/assets/hampi.jpg';
 import jaipurImg from '@/assets/jaipur-city.jpg';
-import tajMahalImg from '@/assets/taj-mahal.jpg';
 import kaziranga from '@/assets/kaziranga.jpg';
-import valleyImg from '@/assets/valley-of-flowers.jpg';
 import redFortImg from '@/assets/red-fort.jpg';
+import vasantPanchamiImg from '@/assets/vasant-panchami.jpg';
+import baishakhiImg from '@/assets/baisakhi.jpg';
+import rathYatraImg from '@/assets/rath-yatra.jpg';
+import hemisImg from '@/assets/hemis-festival.jpg';
+import onamImg from '@/assets/onam.jpg';
+import ganeshImg from '@/assets/ganesh-chaturthi.jpg';
+import dussehraImg from '@/assets/dussehra-mysuru.jpg';
+import rannUtsavImg from '@/assets/rann-utsav.jpg';
+import hornbillImg from '@/assets/hornbill-festival.jpg';
 
 export interface Event {
   id: string;
@@ -51,7 +56,7 @@ export const events: Event[] = [
     date: '2026-02-01',
     location: 'Varanasi & Pan-India',
     description: 'The festival of spring dedicated to Goddess Saraswati, celebrated with music, art, and yellow attire symbolizing the mustard fields in bloom.',
-    image: festivalImg,
+    image: vasantPanchamiImg,
     category: 'Festival',
     ticketPrice: 0
   },
@@ -71,7 +76,7 @@ export const events: Event[] = [
     date: '2026-04-13',
     location: 'Golden Temple, Amritsar, Punjab',
     description: 'Punjabi New Year and harvest festival celebrated with vibrant Bhangra, langars (community meals), and processions at the Golden Temple.',
-    image: festivalImg,
+    image: baishakhiImg,
     category: 'Harvest Festival',
     ticketPrice: 0
   },
@@ -81,7 +86,7 @@ export const events: Event[] = [
     date: '2026-06-28',
     location: 'Jagannath Puri, Odisha',
     description: 'The grand chariot festival of Lord Jagannath where massive, elaborately decorated chariots are pulled through the streets by thousands of devotees.',
-    image: konarkDanceImg,
+    image: rathYatraImg,
     category: 'Festival',
     ticketPrice: 0
   },
@@ -91,7 +96,7 @@ export const events: Event[] = [
     date: '2026-07-08',
     location: 'Hemis Monastery, Ladakh',
     description: 'Ladakh\'s biggest monastic festival celebrating Guru Padmasambhava with masked Cham dances, thangka displays, and traditional music at 3,600m altitude.',
-    image: valleyImg,
+    image: hemisImg,
     category: 'Cultural Festival',
     ticketPrice: 800
   },
@@ -111,7 +116,7 @@ export const events: Event[] = [
     date: '2026-08-28',
     location: 'Kochi, Kerala',
     description: 'Kerala\'s ten-day harvest festival featuring elaborate floral carpets (Pookalam), snake boat races (Vallam Kali), Onasadya feast, and Kathakali performances.',
-    image: festivalImg,
+    image: onamImg,
     category: 'Harvest Festival',
     ticketPrice: 1500
   },
@@ -121,7 +126,7 @@ export const events: Event[] = [
     date: '2026-09-14',
     location: 'Mumbai, Maharashtra',
     description: 'Mumbai\'s spectacular 10-day celebration of Lord Ganesha with grand pandals, immense artistic idols, processions, and the iconic Visarjan immersion ceremony.',
-    image: festivalImg,
+    image: ganeshImg,
     category: 'Festival',
     ticketPrice: 0
   },
@@ -151,7 +156,7 @@ export const events: Event[] = [
     date: '2026-10-12',
     location: 'Mysuru, Karnataka',
     description: 'Mysuru\'s royal Dasara celebration with the illuminated palace, grand Jamboo Savari elephant procession, cultural shows, and the Torchlight Parade.',
-    image: hampiImg,
+    image: dussehraImg,
     category: 'Festival',
     ticketPrice: 1000
   },
@@ -181,7 +186,7 @@ export const events: Event[] = [
     date: '2026-11-15',
     location: 'Rann of Kutch, Gujarat',
     description: 'A three-month cultural extravaganza on the white salt desert featuring folk music, handicraft exhibitions, adventure sports, and stunning full-moon nights.',
-    image: tajMahalImg,
+    image: rannUtsavImg,
     category: 'Cultural Festival',
     ticketPrice: 1800
   },
@@ -191,7 +196,7 @@ export const events: Event[] = [
     date: '2026-12-01',
     location: 'Kisama Heritage Village, Nagaland',
     description: 'The "Festival of Festivals" showcasing the cultural heritage of all Naga tribes through traditional dances, music, crafts, indigenous games, and Naga cuisine.',
-    image: festivalImg,
+    image: hornbillImg,
     category: 'Cultural Festival',
     ticketPrice: 1200
   },
