@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, MapPin, MessageCircle, Phone, X, Send, Globe, Award } from 'lucide-react';
+import { Star, MapPin, MessageCircle, X, Send, Globe, Award, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { travelGuides, TravelGuide } from '@/data/guidesData';
 import { useApp } from '@/contexts/AppContext';
 import { useNavigate } from 'react-router-dom';
@@ -12,8 +13,28 @@ import { toast } from '@/hooks/use-toast';
 const ContactExpertSection = () => {
   const [selectedGuide, setSelectedGuide] = useState<TravelGuide | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [regionFilter, setRegionFilter] = useState('all');
+  const [specializationFilter, setSpecializationFilter] = useState('all');
   const { isAuthenticated, user } = useApp();
   const navigate = useNavigate();
+
+  // Extract unique regions and specializations
+  const regions = useMemo(() => [...new Set(travelGuides.map(g => g.region))], []);
+  const specializations = useMemo(() => [...new Set(travelGuides.map(g => g.specialization))], []);
+
+  // Filter guides based on search and filters
+  const filteredGuides = useMemo(() => {
+    return travelGuides.filter(guide => {
+      const matchesSearch = searchQuery === '' || 
+        guide.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        guide.specialization.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        guide.region.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesRegion = regionFilter === 'all' || guide.region === regionFilter;
+      const matchesSpecialization = specializationFilter === 'all' || guide.specialization === specializationFilter;
+      return matchesSearch && matchesRegion && matchesSpecialization;
+    });
+  }, [searchQuery, regionFilter, specializationFilter]);
 
   const handleContactGuide = (guide: TravelGuide) => {
     if (!isAuthenticated) {
@@ -43,6 +64,12 @@ const ContactExpertSection = () => {
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
+  const clearFilters = () => {
+    setSearchQuery('');
+    setRegionFilter('all');
+    setSpecializationFilter('all');
+  };
+
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -50,7 +77,7 @@ const ContactExpertSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
             Meet Our Travel Experts
@@ -61,9 +88,68 @@ const ContactExpertSection = () => {
           </p>
         </motion.div>
 
+        {/* Search and Filters */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-8 space-y-4"
+        >
+          <div className="flex flex-col sm:flex-row gap-4 max-w-4xl mx-auto">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search by name, region, or specialization..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <Select value={regionFilter} onValueChange={setRegionFilter}>
+              <SelectTrigger className="w-full sm:w-48">
+                <SelectValue placeholder="All Regions" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Regions</SelectItem>
+                {regions.map(region => (
+                  <SelectItem key={region} value={region}>{region}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={specializationFilter} onValueChange={setSpecializationFilter}>
+              <SelectTrigger className="w-full sm:w-56">
+                <SelectValue placeholder="All Specializations" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Specializations</SelectItem>
+                {specializations.map(spec => (
+                  <SelectItem key={spec} value={spec}>{spec}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          {(searchQuery || regionFilter !== 'all' || specializationFilter !== 'all') && (
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-sm text-muted-foreground">
+                {filteredGuides.length} guide{filteredGuides.length !== 1 ? 's' : ''} found
+              </span>
+              <Button variant="ghost" size="sm" onClick={clearFilters} className="text-xs">
+                Clear filters
+              </Button>
+            </div>
+          )}
+        </motion.div>
+
         {/* Guides Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {travelGuides.map((guide, index) => (
+          {filteredGuides.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <p className="text-muted-foreground">No guides found matching your criteria.</p>
+              <Button variant="link" onClick={clearFilters} className="mt-2">
+                Clear filters
+              </Button>
+            </div>
+          ) : filteredGuides.map((guide, index) => (
             <motion.div
               key={guide.id}
               initial={{ opacity: 0, y: 30 }}
