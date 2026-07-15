@@ -410,5 +410,150 @@ export const heritageSites: HeritageSite[] = [
     weather: 'Cold, -5 to 15°C',
     category: 'National Park',
     type: 'Mixed'
+  },
+
+  // ===== ADDITIONAL UNESCO / ICONIC HERITAGE SITES =====
+  {
+    id: 'mahabodhi',
+    name: 'Mahabodhi Temple Complex',
+    location: 'Bodh Gaya, Bihar',
+    description: 'The sacred site where Lord Buddha attained enlightenment, featuring the iconic 50m tall temple built in the 3rd century BCE by Emperor Ashoka.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mahabodhitemple.jpg/1024px-Mahabodhitemple.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=8HV1JVgqPM0',
+    lat: 24.6961, lng: 84.9911,
+    bestTime: 'October to March', crowdLevel: 'High', weather: 'Pleasant, 12-25°C',
+    category: 'Buddhist Heritage', type: 'Cultural'
+  },
+  {
+    id: 'sanchi',
+    name: 'Buddhist Monuments at Sanchi',
+    location: 'Madhya Pradesh',
+    description: 'The Great Stupa of Sanchi, commissioned by Emperor Ashoka in the 3rd century BCE, is one of the oldest stone structures in India.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sanchi_stupa_from_Eastern_gate%2C_Madhya_Pradesh.jpg/1024px-Sanchi_stupa_from_Eastern_gate%2C_Madhya_Pradesh.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=EqcLmzfUaBg',
+    lat: 23.4793, lng: 77.7398,
+    bestTime: 'November to March', crowdLevel: 'Low', weather: 'Pleasant, 12-28°C',
+    category: 'Buddhist Heritage', type: 'Cultural'
+  },
+  {
+    id: 'fatehpur-sikri',
+    name: 'Fatehpur Sikri',
+    location: 'Uttar Pradesh',
+    description: 'The 16th-century Mughal capital city built by Emperor Akbar, featuring the majestic Buland Darwaza and stunning red sandstone palaces.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Buland_Darwaza_gate_at_Fatehpur_Sikri.jpg/1024px-Buland_Darwaza_gate_at_Fatehpur_Sikri.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=49HTIoCo4mY',
+    lat: 27.0937, lng: 77.6610,
+    bestTime: 'October to March', crowdLevel: 'Medium', weather: 'Cool, 10-25°C',
+    category: 'Mughal Architecture', type: 'Cultural'
+  },
+  {
+    id: 'mahabalipuram',
+    name: 'Group of Monuments at Mahabalipuram',
+    location: 'Tamil Nadu',
+    description: 'A 7th-century port city of the Pallava dynasty featuring rock-cut cave temples, monolithic rathas, and the iconic Shore Temple by the Bay of Bengal.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shore_Temple_at_Mahabalipuram.jpg/1024px-Shore_Temple_at_Mahabalipuram.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=3U_xFfhbHY0',
+    lat: 12.6208, lng: 80.1945,
+    bestTime: 'November to February', crowdLevel: 'Medium', weather: 'Warm, 22-32°C',
+    category: 'Temple Architecture', type: 'Cultural'
+  },
+  {
+    id: 'pattadakal',
+    name: 'Group of Monuments at Pattadakal',
+    location: 'Karnataka',
+    description: 'A harmonious blend of Nagara and Dravidian temple styles from the 7th-8th century Chalukyan dynasty, showcasing the pinnacle of eclectic temple art.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pattadakal_temples_pano01_2013-02-17.jpg/1024px-Pattadakal_temples_pano01_2013-02-17.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=5JAnO6x_H4c',
+    lat: 15.9486, lng: 75.8172,
+    bestTime: 'October to March', crowdLevel: 'Low', weather: 'Warm, 20-32°C',
+    category: 'Temple Architecture', type: 'Cultural'
+  },
+  {
+    id: 'rani-ki-vav',
+    name: "Rani ki Vav (Queen's Stepwell)",
+    location: 'Patan, Gujarat',
+    description: 'An intricately constructed 11th-century stepwell built as a memorial by Queen Udayamati, featuring over 500 principal sculptures and 1,000 minor ones.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Rani_ki_vav_02.jpg/1024px-Rani_ki_vav_02.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Jj_VQJXqN4s',
+    lat: 23.8587, lng: 72.1017,
+    bestTime: 'November to February', crowdLevel: 'Low', weather: 'Arid, 15-30°C',
+    category: 'Archaeological Sites', type: 'Cultural'
+  },
+  {
+    id: 'champaner',
+    name: 'Champaner-Pavagadh Archaeological Park',
+    location: 'Gujarat',
+    description: 'A pre-Mughal Islamic city with palaces, mosques, temples, and fortifications from the 8th-14th centuries, blending Hindu and Islamic architecture.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/JamiMasjid.jpg/1024px-JamiMasjid.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=JW8FzGLdXqY',
+    lat: 22.4863, lng: 73.5375,
+    bestTime: 'October to March', crowdLevel: 'Low', weather: 'Warm, 18-32°C',
+    category: 'Archaeological Sites', type: 'Cultural'
+  },
+  {
+    id: 'darjeeling-railway',
+    name: 'Mountain Railways of India (Darjeeling)',
+    location: 'West Bengal',
+    description: 'The Darjeeling Himalayan Railway, opened in 1881, is a UNESCO-listed engineering marvel offering a scenic toy-train journey through Himalayan foothills.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Darjeeling_Himalayan_Railway_2015.jpg/1024px-Darjeeling_Himalayan_Railway_2015.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=P3WmQvUfUyE',
+    lat: 27.0410, lng: 88.2663,
+    bestTime: 'March to May & Sep to Nov', crowdLevel: 'Medium', weather: 'Cool, 5-20°C',
+    category: 'Colonial Heritage', type: 'Cultural'
+  },
+  {
+    id: 'victoria-terminus',
+    name: 'Chhatrapati Shivaji Terminus',
+    location: 'Mumbai, Maharashtra',
+    description: 'A stunning Victorian Gothic Revival railway station completed in 1887, blending traditional Indian architecture with Italian Gothic influences.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/CSMT_Building.jpg/1024px-CSMT_Building.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=JpVm6V3y-WE',
+    lat: 18.9402, lng: 72.8355,
+    bestTime: 'November to February', crowdLevel: 'High', weather: 'Tropical, 22-32°C',
+    category: 'Colonial Heritage', type: 'Cultural'
+  },
+  {
+    id: 'jantar-mantar',
+    name: 'Jantar Mantar',
+    location: 'Jaipur, Rajasthan',
+    description: 'An 18th-century astronomical observation site built by Maharaja Jai Singh II, featuring the world\'s largest stone sundial and 19 architectural astronomical instruments.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jaipur_03-2016_31_Jantar_Mantar.jpg/1024px-Jaipur_03-2016_31_Jantar_Mantar.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Ld0LeyaWbfk',
+    lat: 26.9247, lng: 75.8244,
+    bestTime: 'October to March', crowdLevel: 'High', weather: 'Cool, 10-25°C',
+    category: 'Archaeological Sites', type: 'Cultural'
+  },
+  {
+    id: 'gir-national-park',
+    name: 'Gir National Park',
+    location: 'Gujarat',
+    description: 'The last refuge of the Asiatic Lion, home to over 600 lions along with leopards, hyenas, and over 300 bird species in dry deciduous forests.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Asiatic_Lion.jpg/1024px-Asiatic_Lion.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=vFyBRMH9G-g',
+    lat: 21.1244, lng: 70.8244,
+    bestTime: 'December to March', crowdLevel: 'Medium', weather: 'Warm, 15-35°C',
+    category: 'National Park', type: 'Natural'
+  },
+  {
+    id: 'keoladeo',
+    name: 'Keoladeo National Park',
+    location: 'Bharatpur, Rajasthan',
+    description: 'A UNESCO-listed bird sanctuary hosting over 370 species including migratory Siberian cranes, situated on a wetland ecosystem.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Painted_storks_at_Keoladeo_National_Park.jpg/1024px-Painted_storks_at_Keoladeo_National_Park.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=SxHKmbqE_2s',
+    lat: 27.1590, lng: 77.5220,
+    bestTime: 'October to March', crowdLevel: 'Low', weather: 'Cool, 8-25°C',
+    category: 'National Park', type: 'Natural'
+  },
+  {
+    id: 'manas',
+    name: 'Manas Wildlife Sanctuary',
+    location: 'Assam',
+    description: 'A UNESCO Natural World Heritage Site on the Himalayan foothills, home to tigers, elephants, and the endangered pygmy hog and golden langur.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Manas_National_Park_Assam_India.jpg/1024px-Manas_National_Park_Assam_India.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=vFyBRMH9G-g',
+    lat: 26.7167, lng: 90.9500,
+    bestTime: 'November to April', crowdLevel: 'Low', weather: 'Cool, 12-28°C',
+    category: 'National Park', type: 'Natural'
   }
 ];
